@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+     alert('joe');
+
+    alert(document);
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+    alert('jo jo');
+        var options = new ContactFindOptions();
+     options.filter="";
+        var fields = ["*"];
+        alert('jo jo');
+        navigator.contacts.find(fields, onSuccess, onError, options);
+    };
+    function onSuccess(contacts) {
+        alert(contacts.join(','));
+    };
+
+    function onError(contactError) {
+        alert('onError!');
+    }
+
+    </script>
+</head>
+<body>
+<h1>Example</h1>
+<p>Find Contacts</p>joe joe
+</body>
+</html>

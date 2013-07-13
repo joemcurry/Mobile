@@ -1,0 +1,54 @@
+﻿body, td, div, span {
+    font-family: Trebuchet MS, Verdana, Arial, serif;
+    
+}
+body div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    height: 100%;
+}
+
+#recert {
+    
+    width: 90%;
+    font-size: 30px;
+    background-color: white;
+    
+}
+
+#recert div {
+    margin: 2px;
+}
+
+#recert div:first-child {
+    text-align: center;
+}
+
+select {
+    font-family:  arial, serif;
+    font-size: 30px;
+}
+
+
+
+td {
+    font-family: arial, serif;
+    font-size: 13px;
+}
+
+td:first-child {
+    width: 125px;
+}
+
+td:nth-child(2) {
+    text-align: center;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid silver;
+}

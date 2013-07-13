@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Hospice Recert</title>
+
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="cordova-2.7.0.js"></script>
+    <script src="scripts/jquery-2.0.0.min.js"></script>
+    <script src="scripts/myscripts/Custom.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/myscripts/nc.js"></script>
+
+
+
+
+    <style type="text/css">
+        .auto-style1 {
+        text-align: center;
+        }
+        .auto-style2 {
+        font-size: xx-small;
+        }
+    </style>
+
+</head>
+<body ng-controller="ncControl">
+
+<form>
+    <div id="recert">
+        <div >
+            <span>Admission Date</span><br />
+            <select ng-model="nc.Month" ng-options="d.value as d.name for d in months" ng-change="Update()"></select>
+            <select ng-model="nc.Day" ng-options="d.value as d.name for d in days" ng-change="Update()"></select>
+            <select ng-model="nc.Year" ng-options="d.value as d.name for d in years" ng-change="Update()"></select>
+        </div>
+        <div>
+            <table border="1" cellspacing="0" cellpadding="3">
+                <tr>
+                    <td>First 90 Days</td>
+                    <td>{{Recert.StartFirstCertificationPeriod}} - {{Recert.EndFirstCertificationPeriod}}</td>
+                </tr>
+                <tr>
+                    <td>First Sign Date</td>
+                    <td>{{Recert.SignFirstCertification}}</td>
+                </tr>
+                <tr>
+                    <td>Second 90 Days</td>
+                    <td>{{Recert.StartSecondCertificationPeriod}} - {{Recert.EndSecondCertificationPeriod}}</td>
+                </tr>
+                <tr>
+                    <td>Second Sign Date</td>
+                    <td>{{Recert.SignFirstCertification}}</td>
+                </tr>
+                <tr>
+                    <td>Face to Face</td>
+                    <td>{{Recert.FaceToFace}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        {{Boom}} {{Bang}}
+        Contacts found : {{Contacts.length}}
+        <div ng-show="Contacts.length > 0">
+            <div ng-repeat="c in Contacts">{{c.displayName}} <div ng-repeat="p in c.phoneNumbers">{{p.type}} - {{p.value}}</div><hr></div>
+
+        </div>
+    </div>
+</form>
+<div class="auto-style1">
+    <div>
+        <br/><br/><br/>
+        <img src="img/ms.jpg" width="75px" height="50px"/>
+    </div>
+            <span class="auto-style2">Copyright 2013 - Joseph Curry
+
+    </span>
+</div>
+
+</body>
+</html>
